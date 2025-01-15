@@ -43,7 +43,11 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center min-h-screen p-8 pb-20">
-      <h1 className="text-4xl text-darkgrey py-8">What's the weather</h1>
+      <div className="py-8 text-center">
+        <h1 className="hidden tablet:flex text-4xl text-darkgrey">🌤️☁️🌩️ What's the weather ☀️🌧️❄️</h1>
+        <h1 className="flex tablet:hidden text-4xl text-darkgrey">What's the weather</h1>
+        <h1 className="text-xl text-darkgrey">By Harold Kwong</h1>
+      </div>
       <div id="citySearchSection" className="w-full h-auto p-8 flex flex-col items-center">
         <CitySearchBar handleCitySelected={handleCitySelected} />
       </div>
