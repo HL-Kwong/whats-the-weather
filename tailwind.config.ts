@@ -7,6 +7,14 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    colors: {
+      'black': '#000000',
+      'darkblue': '#14213D',
+      'orange': '#FCA311',
+      'darkgrey': '#404040',
+      'lightgrey': '#E5E5E5',
+      'white': '#FFFFFF'
+    },
     extend: {
       colors: {
         background: "var(--background)",
