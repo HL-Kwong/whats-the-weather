@@ -40,14 +40,15 @@ const CitySearchBar = ({ handleCitySelected }: any) => {
     }, [selectedCity]);
 
     return (
-        <div className="fixed top-16 w-72">
+        <div className="w-1/2 max-tablet:w-full">
             <Combobox value={selectedCity} onChange={setSelectedCity}>
                 <div className="relative mt-1">
-                    <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
+                    <div className="relative w-full p-2 cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md">
                         <ComboboxInput
-                            className="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0"
+                            className="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-darkgrey focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
                             displayValue={(city) => (city as any)?.name}
                             onChange={(event) => setQuery(event.target.value)}
+                            placeholder='Search city'
                         />
                     </div>
                     <Transition
@@ -59,7 +60,7 @@ const CitySearchBar = ({ handleCitySelected }: any) => {
                     >
                         <ComboboxOptions className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
                             {filteredCities.length === 0 && query !== '' ? (
-                                <div className="relative cursor-default select-none px-4 py-2 text-gray-700">
+                                <div className="relative cursor-default select-none px-4 py-2 text-darkgrey">
                                     Nothing found.
                                 </div>
                             ) : (

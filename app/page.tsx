@@ -42,8 +42,9 @@ export default function Home() {
   }
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <div id="citySearchSection">
+    <div className="flex flex-col items-center min-h-screen p-8 pb-20">
+      <h1 className="text-4xl text-darkgrey py-8">What's the weather</h1>
+      <div id="citySearchSection" className="w-full h-auto flex flex-col items-center">
         <CitySearchBar handleCitySelected={handleCitySelected} />
       </div>
       <div id="weatherDetailSection">
