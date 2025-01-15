@@ -73,6 +73,9 @@ const CitySearchBar = ({ handleCitySelected }: any) => {
                                         <span className="block truncate font-normal">
                                             {city.name}
                                         </span>
+                                        <span className="block truncate text-darkgrey font-thin">
+                                            {city.state ? `${city.state},` : ''}{city.country}
+                                        </span>
                                     </ComboboxOption>
                                 ))
                             )}
