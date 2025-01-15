@@ -15,6 +15,12 @@ export default {
       'lightgrey': '#E5E5E5',
       'white': '#FFFFFF'
     },
+    screens: {
+      mobile: "375px",
+      tablet: "768px",
+      laptop: "1024px",
+      desktop: "1280px",
+    },
     extend: {
       colors: {
         background: "var(--background)",
