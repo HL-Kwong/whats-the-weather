@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "What's the Weather",
-  description: "An NextJS application created by Harold Kwong",
+  title: "What's the Weather | By Harold Kwong",
+  description: "A NextJS weather checking application created by Harold Kwong",
 };
 
 export default function RootLayout({
