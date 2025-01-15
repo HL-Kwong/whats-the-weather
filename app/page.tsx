@@ -44,10 +44,10 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center min-h-screen p-8 pb-20">
       <h1 className="text-4xl text-darkgrey py-8">What's the weather</h1>
-      <div id="citySearchSection" className="w-full h-auto flex flex-col items-center">
+      <div id="citySearchSection" className="w-full h-auto p-8 flex flex-col items-center">
         <CitySearchBar handleCitySelected={handleCitySelected} />
       </div>
-      <div id="weatherDetailSection">
+      <div id="weatherDetailSection" className="w-full h-auto tablet:p-8 flex flex-row items-center">
         {weatherData &&
           <WeatherGrid weatherData={weatherData} />
         }
