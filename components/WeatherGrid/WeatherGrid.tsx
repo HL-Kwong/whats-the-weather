@@ -24,7 +24,7 @@ const WeatherGrid = ({ weatherData }: any) => {
             setSunsetHour(sunsetHour.length >= 2 ? sunsetHour : "0" + sunsetHour)
             setSunsetMinute(sunsetMinute.length >= 2 ? sunsetMinute : "0" + sunsetMinute)
 
-            setTimezone((weatherData.timezone / 60 / 60) > 0 ? "+" + (weatherData.timezone / 60 / 60).toString() : (weatherData.timezone / 60 / 60).toString())
+            setTimezone((weatherData.timezone / 60 / 60) >= 0 ? "+" + (weatherData.timezone / 60 / 60).toString() : (weatherData.timezone / 60 / 60).toString())
         }
     }, [weatherData])
 
