@@ -6,6 +6,7 @@ const WeatherGrid = ({ weatherData }: any) => {
     const [sunriseMinute, setSunriseMinute] = useState<string>('')
     const [sunsetHour, setSunsetHour] = useState<string>('')
     const [sunsetMinute, setSunsetMinute] = useState<string>('')
+    const [timezone, setTimezone] = useState<string>('')
 
     // Calculate sunrise and sunset time based with consideration of timezone
     useEffect(() => {
@@ -22,6 +23,8 @@ const WeatherGrid = ({ weatherData }: any) => {
             const sunsetMinute = sunsetTimestamp.getMinutes().toString()
             setSunsetHour(sunsetHour.length >= 2 ? sunsetHour : "0" + sunsetHour)
             setSunsetMinute(sunsetMinute.length >= 2 ? sunsetMinute : "0" + sunsetMinute)
+
+            setTimezone((weatherData.timezone / 60 / 60) >= 0 ? "+" + (weatherData.timezone / 60 / 60).toString() : (weatherData.timezone / 60 / 60).toString())
         }
     }, [weatherData])
 
@@ -57,17 +60,20 @@ const WeatherGrid = ({ weatherData }: any) => {
                     </div>
                     <div className="w-full h-full tablet:px-4 flex flex-col items-center">
                         <span className="text-darkgrey text-xl">Sunrise / Sunset</span>
-                        <div className="w-full h-full flex flex-row items-center mb-9 rounded-xl py-8 desktop:px-7 shadow-md transition-all hover:shadow-lg sm:p-9 lg:px-6 xl:px-9">
-                            <div className="w-1/2 text-left flex flex-col items-center mx-4">
-                                <img className="h-[100px] mb-4 object-scale-down" src={`/images/icons/sunrise.png`} alt="Sunrise Icon" />
-                                <h3 className="text-md text-darkgrey sm:text-2xl lg:text-xl xl:text-2xl">Sunrise:</h3>
-                                <h3 className="mb-4 text-4xl font-bold text-darkgrey sm:text-2xl lg:text-xl xl:text-2xl">{sunriseHour.length > 0 && sunriseMinute.length > 0 && `${sunriseHour}:${sunriseMinute}`}</h3>
+                        <div className="w-full h-full flex flex-col items-center mb-9 rounded-xl py-8 desktop:px-7 shadow-md transition-all hover:shadow-lg sm:p-9 lg:px-6 xl:px-9">
+                            <div className="w-full flex flex-row items-center">
+                                <div className="w-1/2 text-left flex flex-col items-center mx-4">
+                                    <img className="h-[100px] mb-4 object-scale-down" src={`/images/icons/sunrise.png`} alt="Sunrise Icon" />
+                                    <h3 className="text-md text-darkgrey sm:text-2xl lg:text-xl xl:text-2xl">Sunrise:</h3>
+                                    <h3 className="mb-4 text-4xl font-bold text-darkgrey sm:text-2xl lg:text-xl xl:text-2xl">{sunriseHour.length > 0 && sunriseMinute.length > 0 && `${sunriseHour}:${sunriseMinute}`}</h3>
+                                </div>
+                                <div className="w-1/2 text-left flex flex-col items-center mr-4">
+                                    <img className="h-[100px] mb-4 object-scale-down" src={`/images/icons/sunset.png`} alt="Sunset Icon" />
+                                    <h3 className="text-md text-darkgrey sm:text-2xl lg:text-xl xl:text-2xl">Sunset:</h3>
+                                    <h3 className="mb-4 text-4xl font-bold text-darkgrey sm:text-2xl lg:text-xl xl:text-2xl">{sunsetHour.length > 0 && sunsetMinute.length > 0 && `${sunsetHour}:${sunsetMinute}`}</h3>
+                                </div>
                             </div>
-                            <div className="w-1/2 text-left flex flex-col items-center mr-4">
-                                <img className="h-[100px] mb-4 object-scale-down" src={`/images/icons/sunset.png`} alt="Sunset Icon" />
-                                <h3 className="text-md text-darkgrey sm:text-2xl lg:text-xl xl:text-2xl">Sunset:</h3>
-                                <h3 className="mb-4 text-4xl font-bold text-darkgrey sm:text-2xl lg:text-xl xl:text-2xl">{sunsetHour.length > 0 && sunsetMinute.length > 0 && `${sunsetHour}:${sunsetMinute}`}</h3>
-                            </div>
+                            <p className="text-base font-medium text-body-color">GMT{timezone}</p>
                         </div>
                     </div>
                     <div className="w-full h-full tablet:px-4 flex flex-col items-center">
