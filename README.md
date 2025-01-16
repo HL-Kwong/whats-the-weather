@@ -31,11 +31,11 @@ This responsive web application is built using **Next.js**, **Headless UI** and 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/weather-finder.git
+   git clone https://github.com/HL-Kwong/whats-the-weather.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd weather-finder
+   cd whats-the-weather
    ```
 3. Install dependencies:
    ```bash
