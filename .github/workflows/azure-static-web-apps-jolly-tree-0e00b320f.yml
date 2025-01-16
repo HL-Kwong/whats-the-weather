@@ -45,6 +45,11 @@ jobs:
           output_location: "" # Built app content directory - optional
           github_id_token: ${{ steps.idtoken.outputs.result }}
           ###### End of Repository/Build Configurations ######
+        env: # Add environment variables here
+          API_URL_PREFIX: ${{ secrets.API_URL_PREFIX}}
+          API_KEY: ${{ secrets.API_KEY}}
+          API_GET_CITY: ${{ secrets.API_GET_CITY}}
+          API_GET_WEATHER: ${{ secrets.API_GET_WEATHER}}
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
