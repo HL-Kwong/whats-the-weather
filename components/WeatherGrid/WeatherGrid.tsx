@@ -61,7 +61,7 @@ const WeatherGrid = ({ weatherData }: any) => {
                     <div className="w-full h-full tablet:px-4 flex flex-col items-center">
                         <span className="text-darkgrey text-xl">Sunrise / Sunset</span>
                         <div className="w-full h-full flex flex-col items-center mb-9 rounded-xl py-8 desktop:px-7 shadow-md transition-all hover:shadow-lg sm:p-9 lg:px-6 xl:px-9">
-                            <div className="flex flex-row items-center">
+                            <div className="w-full flex flex-row items-center">
                                 <div className="w-1/2 text-left flex flex-col items-center mx-4">
                                     <img className="h-[100px] mb-4 object-scale-down" src={`/images/icons/sunrise.png`} alt="Sunrise Icon" />
                                     <h3 className="text-md text-darkgrey sm:text-2xl lg:text-xl xl:text-2xl">Sunrise:</h3>
